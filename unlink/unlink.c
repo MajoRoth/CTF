@@ -8,10 +8,10 @@ typedef struct tagOBJ{
 }OBJ;
 
 void shell(){
-        system("/bin/sh"); // CHANGE THIS LIN TO WIN
+        system("/bin/sh"); // CHANGE THIS LINE TO WIN
 }
 
-void unlink(OBJ* P){
+void unlinkOBJ(OBJ* P){
         OBJ* BK;
         OBJ* FD;
         BK=P->bk;
@@ -38,6 +38,6 @@ int main(int argc, char* argv[]){
         gets(A->buf);
 
         // exploit this unlink!
-        unlink(B);
+        unlinkOBJ(B);
         return 0;
 }
