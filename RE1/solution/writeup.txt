@@ -1,0 +1,4 @@
+RE1
+
+disassemble exe in Ida.
+Find the string "LacosteIsTheBest" and try it.
