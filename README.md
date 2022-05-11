@@ -3,15 +3,16 @@
 
 ## Menu
 ### Easy
+* [password hamster](https://github.com/MajoRoth/CTF/tree/main/password_hamster) - very easy RE challenge for warmup
+* [the authenticator](https://github.com/MajoRoth/CTF/tree/main/the_authenticator) - RE challenge, could you log in?
 * Reverse engineering -
-* Reverse engineering -
-* Reverse engineering -
-* Buffer overflow - [unlink](https://github.com/MajoRoth/CTF/tree/main/unlink) Guy/Bar, pwnable changed the binary file to enable the vulrnability. can we do that aswell?
+* Buffer overflow - 
 * Buffer overflow -
 * Buffer overflow -
 * Use after free -
 
 ### Moderate
+* [unlink](https://github.com/MajoRoth/CTF/tree/main/unlink)
 * Reverse engineering & Buffer overflow - 
 * Use after free
 
