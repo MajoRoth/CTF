@@ -19,14 +19,14 @@ int main()
 {
     char username[100];
     char password[100];
-    printf("Welcome to RE2 challenge!\n");
+    printf("Welcome to the_authenticator challenge!\n");
     printf("Enter Username: ");
     scanf("%100s", username);
     printf("Enter Password: ");
     scanf("%100s", password);
     if (validate_login(username, password))
     {
-        printf("Good Job! You completed RE2 challenge!\n");
+        printf("Good Job! You completed the_authenticator challenge!\n");
     }
     else
     {
