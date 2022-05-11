@@ -8,7 +8,7 @@ typedef struct tagOBJ{
 }OBJ;
 
 void shell(){
-        system("/bin/sh"); // CHANGE THIS LINE TO WIN
+  printf ("shel code has been executed");
 }
 
 void unlinkOBJ(OBJ* P){
