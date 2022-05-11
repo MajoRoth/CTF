@@ -10,7 +10,7 @@ int main()
     scanf("%s", b);
     if (!strcmp(a, "YEAH"))
     {
-        printf("Good Job! You completed BOF1 challenge!\n");
+        printf("Good Job! You completed go_with_the_flow challenge!\n");
     }
     else
     {

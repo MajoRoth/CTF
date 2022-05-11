@@ -1,4 +1,5 @@
-RE2
+BOF1
 
-disassemble exe in Ida.
-observe how to code matches the password to the username.
+we see that the size of b is 5 bytes and scanf does not limit us how many bytes to write.
+when we write longer strings then 5 we can see that the value of x is changes.
+we want to write to a so we need to pad 6 chars before the password to succeed.
