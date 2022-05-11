@@ -6,7 +6,7 @@
 * Reverse engineering -
 * Reverse engineering -
 * Reverse engineering -
-* Buffer overflow - [unlink](https://github.com/MajoRoth/CTF/tree/main/unlink).
+* Buffer overflow - [unlink](https://github.com/MajoRoth/CTF/tree/main/unlink) Guy/Bar, pwnable changed the binary file to enable the vulrnability. can we do that aswell?
 * Buffer overflow -
 * Buffer overflow -
 * Use after free -
