@@ -1,4 +1,4 @@
-# win CTF <img src="https://github.com/MajoRoth/CTF/blob/main/static/c.svg" width="20"> <img src="https://github.com/MajoRoth/CTF/blob/main/static/windows.svg" width="20"> <img src="https://github.com/MajoRoth/CTF/blob/main/static/ida.png" width="20">
+# win CTF <img src="https://github.com/MajoRoth/CTF/blob/main/static/c.svg" width="20"> <img src="https://github.com/MajoRoth/CTF/blob/main/static/windows.svg" width="20"> <img src="https://github.com/MajoRoth/CTF/blob/main/static/ida.png" width="30">
 
 
 ## Menu
