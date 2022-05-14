@@ -1,0 +1,10 @@
+1) changing 'is_looged':
+    a) creating an auth object with 'auth' command
+    b) freeing with 'reset' command
+    c) overwriting with service
+2)
+    a) creating a command object with 'command' command
+    b) freeing the command object with 'apply' command
+    c) call 'auth give_me_the_flag' so command will be "give_me_the_flag"
+    d) call 'auth admin' to create a new auth object with username = admin
+    e) call apply!
