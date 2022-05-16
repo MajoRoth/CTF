@@ -1,0 +1,9 @@
+1) Open the exe in Ida
+2) Notice that the address of 's' (function 'handle') is: ebp - 9
+3) We want to enter 9 chars,
+    than 4 chars to overflow ebp,
+    than 4 bytes representing the address of 'hack_me' in little endian, (0x00401460)
+    than 4 bytes fake return adress,
+    than 4 bytes the argument of 'hack_me'. (0x41414141)
+
+answer: "aaaaaaaaaaaaa`¶@ aaaaAAAA"
