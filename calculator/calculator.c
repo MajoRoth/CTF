@@ -3,6 +3,7 @@
 #include <string.h>
 
 #define MAX_LENGTH 1024
+#define NUMBER_BUFFER_LENGTH 16
 #define XOR_KEY 0xAAAAAAAA
 #define ADD '+'
 #define SUB '-'
@@ -49,7 +50,7 @@ int main(int argc, char** argv)
             }
             if(formula != NULL)
             {
-                printf("Your %d is Result: %d\n", formulaCount ^ XOR_KEY, formula(x, y));
+                printf("Your %d formula result is: %d\n", formulaCount ^ XOR_KEY, formula(x, y));
             }
         }
         else
@@ -80,7 +81,7 @@ int sub(int x, int y)
 
 void update(char* buffer, int *x, int *y, char *op)
 {
-    char buff[16] = { 0 };
+    char buff[NUMBER_BUFFER_LENGTH] = { 0 };
     int i = 0;
     // Finding the op
     for(i = 0; buffer[i]; ++i)
@@ -105,9 +106,10 @@ void update(char* buffer, int *x, int *y, char *op)
     }
     // Finding the y
     ++i;
-    for(int x = 0; buffer[i]; ++i, ++x)
+    memset(buff, 0, NUMBER_BUFFER_LENGTH);
+    for(int j = 0; buffer[i]; ++i, ++j)
     {
-        buff[x] = buffer[i];
+        buff[j] = buffer[i];
     }
     buff[i] = 0;
     *y = atoi(buff);
