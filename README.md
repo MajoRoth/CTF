@@ -8,13 +8,13 @@
 * Reverse engineering -
 * [go with the flow](https://github.com/MajoRoth/CTF/tree/main/go_with_the_flow) - very simple buffer overflow
 * [get here](https://github.com/MajoRoth/CTF/tree/main/get_here) - buffer overflow, change a function call
-* Use after free -
+* [Use after free](https://github.com/MajoRoth/CTF/tree/main/easy_uaf) - simple uaf challenge
 
 ### Moderate
 * lotto
 * calculator - kirel writes 
 * [bank account](https://github.com/MajoRoth/CTF/tree/main/bank_account) - double use after free
-* rop
+* [ROP](https://github.com/MajoRoth/CTF/tree/main/ROP) - ROP with args challenge
 
 ### Hard
 * pro calculator - kirel writes
