@@ -8,15 +8,15 @@
 * Reverse engineering -
 * [go with the flow](https://github.com/MajoRoth/CTF/tree/main/go_with_the_flow) - very simple buffer overflow
 * [get here](https://github.com/MajoRoth/CTF/tree/main/get_here) - buffer overflow, change a function call
-* Buffer overflow -
 * Use after free -
 
 ### Moderate
-* [unlink](https://github.com/MajoRoth/CTF/tree/main/unlink)
+* lotto
 * calculator - kirel writes 
 * [bank account](https://github.com/MajoRoth/CTF/tree/main/bank_account) - double use after free
+* rop
 
 ### Hard
 * pro calculator - kirel writes
 * Buffer overflow -
-* Use after free -
+* inject assembly -
