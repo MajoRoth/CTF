@@ -18,5 +18,5 @@
 
 ### Hard
 * pro calculator - kirel writes
-* Buffer overflow -
+* calculator - kirel writes 
 * inject assembly -
