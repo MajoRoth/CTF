@@ -11,12 +11,11 @@
 * [Use after free](https://github.com/MajoRoth/CTF/tree/main/easy_uaf) - simple uaf challenge
 
 ### Moderate
-* lotto
-* calculator - kirel writes 
+* [lotto](https://github.com/MajoRoth/CTF/tree/main/lotto) - logic vulnerability
 * [bank account](https://github.com/MajoRoth/CTF/tree/main/bank_account) - double use after free
 * [ROP](https://github.com/MajoRoth/CTF/tree/main/ROP) - ROP with args challenge
 
 ### Hard
-* pro calculator - kirel writes
-* calculator - kirel writes 
+* [calculator](https://github.com/MajoRoth/CTF/tree/main/calculator) -
+* [calculator_aslr](https://github.com/MajoRoth/CTF/tree/main/calculator_aslr) -
 * inject assembly -
