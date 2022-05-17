@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <fcntl.h>
-#include <unistd.h>
+#include <time.h>
 
 unsigned char submit[6];
 
@@ -19,21 +19,13 @@ void play(){
   //sleep(1);
 
   // generate lotto numbers
-  int fd = open("/dev/urandom", O_RDONLY);
-  if(fd==-1){
-      printf("error. tell admin\n");
-      exit(-1);
-    }
   unsigned char lotto[6];
-  if(read(fd, lotto, 6) != 6){
-      printf("error2. tell admin\n");
-      exit(-1);
-    }
+  srand(time(NULL));   // Initialization, should only be called once.
+
   for(i=0; i<6; i++){
+      lotto[i] = rand();
       lotto[i] = (lotto[i] % 45) + 1;
-      printf ("d: %d\n", lotto[i]);// 1 ~ 45
     }
-  close(fd);
 
   // calculate lotto score
   int match = 0, j = 0;
@@ -47,7 +39,7 @@ void play(){
 
   // win!
   if(match == 6){
-      printf ("Congrats! you won to lotto!\n")
+      printf ("-------------\nCongrats! you won to lotto!\n-------------\n");
     }
   else{
       printf("bad luck...\n");
