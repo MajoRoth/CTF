@@ -8,6 +8,12 @@
 #define ADD '+'
 #define SUB '-'
 
+struct stack_controler{
+    char input[MAX_LENGTH];
+    int formulaCount;
+    int (*formula)(int, int);
+};
+
 void won_the_flag();
 int add(int x, int y);
 int sub(int x, int y);
@@ -17,9 +23,11 @@ char findOp(char* buffer, size_t length);
 
 int main(int argc, char** argv)
 {
-    char input[MAX_LENGTH] = { 0 };
-    int formulaCount = XOR_KEY; // We will have fun with XOR
-    int (*formula)(int, int) = NULL;
+    struct stack_controler stack = {0};
+    stack.formulaCount = XOR_KEY;
+    // char input[MAX_LENGTH] = { 0 };
+    // int formulaCount = 0xAAAAAAAA; // We will have fun with XOR
+    // int (*formula)(int, int) = NULL;
     int x = 0, y = 0;
     char op = '\0';
 
@@ -28,29 +36,35 @@ int main(int argc, char** argv)
     {
         printf("Enter your formula (empty string to exit): \n");
         fflush(stdout);
-        gets(input); // ASLR is enabled, so no worries right?
-        formulaCount ^= XOR_KEY;
-        formulaCount++;
-        formulaCount ^= XOR_KEY;
-        printf("You entered: %s\n", input);
-        if (strlen(input) > 0)
+        gets(stack.input);
+        /*
+        if (strlen(stack.input) > 0 && stack.input[strlen(stack.input) - 1] == '\n')
         {
-            update(input, &x, &y, &op, MAX_LENGTH);
+            stack.input[strlen(stack.input) - 1] = 0;
+        }
+        */
+        stack.formulaCount ^= XOR_KEY;
+        stack.formulaCount++;
+        stack.formulaCount ^= XOR_KEY;
+        printf("You entered: %s\n", stack.input);
+        if (strlen(stack.input) > 0)
+        {
+            update(stack.input, &x, &y, &op, MAX_LENGTH);
             switch (op)
             {
             case ADD:
-                formula = add;
+                stack.formula = add;
                 break;
             case SUB:
-                formula = sub;
+                stack.formula = sub;
                 break;
             default:
                 printf("Invalid operation\n");
                 break;
             }
-            if (formula != NULL)
+            if (stack.formula != NULL)
             {
-                printf("Your %d formula result is: %d\n", formulaCount ^ XOR_KEY, formula(x, y));
+                printf("Your %d formula result is: %d\n", stack.formulaCount ^ XOR_KEY, stack.formula(x, y));
             }
             fflush(stdout);
         }
@@ -80,7 +94,6 @@ int sub(int x, int y)
     return x - y;
 }
 
-// I fixed this bad vulnerable code
 void update(char* buffer, int* x, int* y, char* op, size_t length)
 {
     char buff[NUMBER_BUFFER_LENGTH] = { 0 };
