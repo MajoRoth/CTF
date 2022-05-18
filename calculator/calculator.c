@@ -4,7 +4,7 @@
 
 #define MAX_LENGTH 1024
 #define NUMBER_BUFFER_LENGTH 8
-#define XOR_KEY 0xAAAAAAAA
+#define XOR_KEY 0x46464646
 #define ADD '+'
 #define SUB '-'
 
@@ -18,7 +18,7 @@ char findOp(char* buffer);
 int main(int argc, char** argv)
 {
     char input[MAX_LENGTH] = { 0 };
-    int formulaCount = 0xAAAAAAAA; // We will have fun with XOR
+    int formulaCount = XOR_KEY; // We will have fun with XOR
     int (*formula)(int, int) = NULL;
     int x = 0, y = 0;
     char op = '\0';
@@ -47,7 +47,6 @@ int main(int argc, char** argv)
                     formula = sub;
                     break;
                 default:
-                    formula = NULL;
                     printf("Invalid operation\n");
                     break;
             }
