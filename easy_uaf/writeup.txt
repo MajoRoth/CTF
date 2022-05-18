@@ -1,0 +1,4 @@
+1) new_user. notice that we are limited to 4 chars and can't write "LACOSTE"
+2) delete_user
+3) allocate_string -> "LACOSTE"
+4) login

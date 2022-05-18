@@ -4,6 +4,9 @@
 int validate_login(char *username, char *password)
 {
     int result = 1;
+    if (strlen(username) < 4){
+        return 0;
+    }
     for (int i = 0; i < strlen(username); i++)
     {
         if (username[i] + 3 != password[i])
@@ -12,7 +15,6 @@ int validate_login(char *username, char *password)
         }
     }
     return result;
-
 }
 
 int main()

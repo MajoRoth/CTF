@@ -1,0 +1,4 @@
+reverse enginnering
+
+calculates a polynom and finds out if it exceeds a certain value.
+achieve this value by passing 47!
