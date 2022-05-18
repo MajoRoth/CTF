@@ -5,7 +5,7 @@
 ### Easy
 * [password hamster](https://github.com/MajoRoth/CTF/tree/main/password_hamster) - very easy RE challenge for warmup
 * [the authenticator](https://github.com/MajoRoth/CTF/tree/main/the_authenticator) - RE challenge, could you log in?
-* Reverse engineering -
+* [meeting point](https://github.com/MajoRoth/CTF/tree/main/meeting_point) - RE challenge, could you log in?
 * [go with the flow](https://github.com/MajoRoth/CTF/tree/main/go_with_the_flow) - very simple buffer overflow
 * [get here](https://github.com/MajoRoth/CTF/tree/main/get_here) - buffer overflow, change a function call
 * [Use after free](https://github.com/MajoRoth/CTF/tree/main/easy_uaf) - simple uaf challenge
