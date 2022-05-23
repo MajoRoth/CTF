@@ -3,21 +3,22 @@
 #include <string.h>
 
 #define MAX_LENGTH 1024
-#define NUMBER_BUFFER_LENGTH 16
-#define XOR_KEY 0xAAAAAAAA
+#define NUMBER_BUFFER_LENGTH 8
+#define XOR_KEY 0x46464646
 #define ADD '+'
 #define SUB '-'
-
 
 void won_the_flag();
 int add(int x, int y);
 int sub(int x, int y);
 void update(char* buffer, int *x, int *y, char *op);
+int updateNumber(char* buffer, char* targetBuffer, const char op);
+char findOp(char* buffer);
 
 int main(int argc, char** argv)
 {
     char input[MAX_LENGTH] = { 0 };
-    int formulaCount = 0xAAAAAAAA; // We will have fun with XOR
+    int formulaCount = XOR_KEY; // We will have fun with XOR
     int (*formula)(int, int) = NULL;
     int x = 0, y = 0;
     char op = '\0';
@@ -30,6 +31,7 @@ int main(int argc, char** argv)
         {
             input[strlen(input) - 1] = 0;
         }
+        printf("You entered: %s\n", input);
         formulaCount ^= XOR_KEY;
         formulaCount++;
         formulaCount ^= XOR_KEY;
@@ -82,36 +84,32 @@ int sub(int x, int y)
 void update(char* buffer, int *x, int *y, char *op)
 {
     char buff[NUMBER_BUFFER_LENGTH] = { 0 };
-    int i = 0;
-    // Finding the op
-    for(i = 0; buffer[i]; ++i)
-    {
-        if(buffer[i] == ADD || buffer[i] == SUB)
-        {
-            *op = buffer[i];
-            break;
-        }
-    }
-    // Finding the x
-    for(i = 0; buffer[i]; ++i)
-    {
-        if(buffer[i] == ADD || buffer[i] == SUB)
-        {
-            buff[i] = 0;
-            *x = atoi(buff);
-            break;
-        }
-        else
-            buff[i] = buffer[i];
-    }
-    // Finding the y
-    ++i;
-    memset(buff, 0, NUMBER_BUFFER_LENGTH);
-    for(int j = 0; buffer[i]; ++i, ++j)
-    {
-        buff[j] = buffer[i];
-    }
-    buff[i] = 0;
+    *op = findOp(buffer);
+    if((*op) == '\0')
+        return;
+    buffer = buffer + updateNumber(buffer, buff, *op) + 1;
+    *x = atoi(buff);
+    updateNumber(buffer, buff, *op);
     *y = atoi(buff);
+}
 
+int updateNumber(char* buffer, char* targetBuffer, const char op)
+{
+    int i = 0;
+    for(i = 0; buffer[i] != 0 && buffer[i] != op; ++i)
+    {
+        targetBuffer[i] = buffer[i];
+    }
+    return i;
+}
+
+char findOp(char* buffer)
+{
+    int i = 0;
+    for(i = 0; buffer[i]; ++i)
+    {
+        if(buffer[i] == ADD || buffer[i] == SUB)
+            return buffer[i];
+    }
+    return '\0';
 }
