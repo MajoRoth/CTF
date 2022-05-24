@@ -15,7 +15,6 @@ int validate_login(char *username, char *password)
         }
     }
     return result;
-
 }
 
 int main()

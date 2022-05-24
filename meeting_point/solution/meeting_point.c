@@ -55,7 +55,7 @@ int main(){
               printf ("You won!!\n\n");
               break;
           }
-          printf("your result is %d\n\n",  d);
+          printf("you lost, try again\n");
         }
       else{
           break;
