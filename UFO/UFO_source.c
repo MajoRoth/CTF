@@ -9,8 +9,6 @@ struct user
 int main()
 {
     char word[100];
-    int val;
-    int *g;
     struct user *user;
     printf("Enter Command: ");
     while(scanf("%99s", word))
