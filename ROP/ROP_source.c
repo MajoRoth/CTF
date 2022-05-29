@@ -2,39 +2,31 @@
 #include <string.h>
 #include <stdlib.h>
 
-int hack_me(int a)
+int hack_me(int arg)
 {
-    if (a == 0x41414141)
-    {
-        printf("Good Job!");
-    }
-    else
-    {
-        printf("almost... not good enough");
-    }
+    // Wierd stuff... better look in IDA what this does
+    register int mystery asm("ebx");
 
+    printf("Good Job!\n");
+    printf("arg = %x (Should be deadbeef)\n", arg);
+    printf("mystery = %x (Should be cafebabe)\n", mystery);
 }
 
 int handle(int favorite_number)
 {
-    char s[1];
+    char s[32];
     printf("Enter you name: ");
-    char buffer1[100];
-    char buffer2[100];
-    scanf("%99s", buffer1);
-    scanf("%99s", buffer2);
-    sprintf(s, "%s%c%s", buffer1, '\0', buffer2);
+    fgets(s, 256, stdin);
 }
 
 int main()
 {
     printf("Enter you favorite number: ");
     int x;
-    scanf("%d", &x);
+    scanf("%d\n", &x);
     handle(x);
     printf("You failed.");
 
 
 
 }
-
