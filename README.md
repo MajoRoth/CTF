@@ -13,7 +13,7 @@ gcc# win CTF <img src="https://github.com/MajoRoth/CTF/blob/main/static/c.svg" w
 * [lotto](https://github.com/MajoRoth/CTF/tree/main/lotto) - logic vulnerability V
 * [bank account](https://github.com/MajoRoth/CTF/tree/main/bank_account) - double use after free V
 * [ROP](https://github.com/MajoRoth/CTF/tree/main/ROP) - ROP with args challenge V
-* [meeting point](https://github.com/MajoRoth/CTF/tree/main/meeting_point) - RE challenge, could you log in?
+* [meeting point](https://github.com/MajoRoth/CTF/tree/main/meeting_point) - RE challenge, could you log in? V
 
 
 ### Hard

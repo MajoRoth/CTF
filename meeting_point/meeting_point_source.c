@@ -1,4 +1,3 @@
-#include <math.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -37,7 +36,7 @@ int main(){
         {
           printf("enter a number\n");
           scanf("%d", &d);
-          int result = factorial (d) - pow (d, 4);
+          int result = factorial (d) - power (d, 4);
           printf("your result is %d\n\n",  result);
         }
       else if (d == 3)
