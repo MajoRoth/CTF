@@ -15,6 +15,7 @@ void play(){
   int r;
   r = read(0, submit, 6);
 
+
   printf("Lotto Start!\n");
   //sleep(1);
 
@@ -26,7 +27,6 @@ void play(){
       lotto[i] = rand();
       lotto[i] = (lotto[i] % 45) + 1;
     }
-
   // calculate lotto score
   int match = 0, j = 0;
   for(i=0; i<6; i++){
@@ -39,7 +39,7 @@ void play(){
 
   // win!
   if(match == 6){
-      printf ("-------------\nCongrats! you won to lotto!\n-------------\n");
+      printf ("-------------\nCongrats! you won the lotto!\n-------------\n");
     }
   else{
       printf("bad luck...\n");
@@ -49,11 +49,9 @@ void play(){
 
 void help(){
   printf("- nLotto Rule -\n");
-  printf("nlotto is consisted with 6 random natural numbers less than 46\n");
+  printf("lotto is consisted with 6 random natural numbers less than 46\n");
   printf("your goal is to match lotto numbers as many as you can\n");
-  printf("if you win lottery for *1st place*, you will get reward\n");
-  printf("for more details, follow the link below\n");
-  printf("http://www.nlotto.co.kr/counsel.do?method=playerGuide#buying_guide01\n\n");
+  printf("if you win lottery for *1st place*, you will get a reward\n");
   printf("mathematical chance to win this game is known to be 1/8145060.\n");
 }
 

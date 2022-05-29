@@ -1,3 +1,0 @@
-logic vulnerability.
-the lottery counts values twice.
-just send the same value 6 times and with a good probability you wil win
