@@ -1,4 +1,0 @@
-buffer overflow
-
-open the code with IDA, find the address of the function
-and push it using the buffer overflow vulnerability.
