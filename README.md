@@ -3,7 +3,7 @@ gcc# win CTF <img src="https://github.com/MajoRoth/CTF/blob/main/static/c.svg" w
 
 ## Menu
 ### Easy
-* [password hamster](https://github.com/MajoRoth/CTF/tree/main/password_hamster) - very easy RE challenge for warmup
+* [password hamster](https://github.com/MajoRoth/CTF/tree/main/password_hamster) - very easy RE challenge for warmup V
 * [the authenticator](https://github.com/MajoRoth/CTF/tree/main/the_authenticator) - RE challenge, could you log in?
 * [go with the flow](https://github.com/MajoRoth/CTF/tree/main/go_with_the_flow) - very simple buffer overflow
 * [get here](https://github.com/MajoRoth/CTF/tree/main/get_here) - buffer overflow, change a function call
