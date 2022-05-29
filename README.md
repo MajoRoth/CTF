@@ -14,7 +14,7 @@ gcc# win CTF <img src="https://github.com/MajoRoth/CTF/blob/main/static/c.svg" w
 * [bank account](https://github.com/MajoRoth/CTF/tree/main/bank_account) - double use after free V
 * [ROP](https://github.com/MajoRoth/CTF/tree/main/ROP) - ROP with args challenge V
 * [meeting point](https://github.com/MajoRoth/CTF/tree/main/meeting_point) - RE challenge, could you log in? V
-
+* [The Kanas](https://github.com/MajoRoth/CTF/tree/main/the_kanas) - Can you beat the kanas? V
 
 ### Hard
 * [calculator](https://github.com/MajoRoth/CTF/tree/main/calculator) -
