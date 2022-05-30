@@ -17,9 +17,8 @@ gcc# win CTF <img src="https://github.com/MajoRoth/CTF/blob/main/static/c.svg" w
 * [The Kanas](https://github.com/MajoRoth/CTF/tree/main/the_kanas) - Can you beat the kanas? V
 
 ### Hard
-* [calculator](https://github.com/MajoRoth/CTF/tree/main/calculator) -
-* [calculator_aslr](https://github.com/MajoRoth/CTF/tree/main/calculator_aslr) -
-* [injector](https://github.com/MajoRoth/CTF/tree/main/injector) -
+* [calculator](https://github.com/MajoRoth/CTF/tree/main/calculator) - hard buffer overflow, change return value
+* [calculator_aslr](https://github.com/MajoRoth/CTF/tree/main/calculator_aslr) - hard buffer overflow, change return value with aslr and printf \0 vulnerability
 
 
 
