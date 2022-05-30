@@ -11,9 +11,9 @@
 void won_the_flag();
 int add(int x, int y);
 int sub(int x, int y);
-void update(char* buffer, int *x, int *y, char *op);
-int updateNumber(char* buffer, char* targetBuffer, const char op);
-char findOp(char* buffer);
+void update(char* input, int *x, int *y, char *op);
+int updateNumber(char* input, char* numberBuffer, const char op);
+char findOp(char* input);
 
 int main(int argc, char** argv)
 {
@@ -35,6 +35,7 @@ int main(int argc, char** argv)
         formulaCount ^= XOR_KEY;
         formulaCount++;
         formulaCount ^= XOR_KEY;
+
         if(strlen(input) > 0)
         {
             update(input, &x, &y, &op);
@@ -81,35 +82,36 @@ int sub(int x, int y)
     return x - y;
 }
 
-void update(char* buffer, int *x, int *y, char *op)
+void update(char* input, int *x, int *y, char *op)
 {
-    char buff[NUMBER_BUFFER_LENGTH] = { 0 };
-    *op = findOp(buffer);
+    char numberBuffer[NUMBER_BUFFER_LENGTH] = { 0 };
+    *op = findOp(input);
     if((*op) == '\0')
         return;
-    buffer = buffer + updateNumber(buffer, buff, *op) + 1;
-    *x = atoi(buff);
-    updateNumber(buffer, buff, *op);
-    *y = atoi(buff);
+    input = input + updateNumber(input, numberBuffer, *op) + 1;
+    *x = atoi(numberBuffer);
+    updateNumber(input, numberBuffer, *op);
+    *y = atoi(numberBuffer);
 }
 
-int updateNumber(char* buffer, char* targetBuffer, const char op)
+int updateNumber(char* input, char* numberBuffer, const char op)
 {
     int i = 0;
-    for(i = 0; buffer[i] != 0 && buffer[i] != op; ++i)
+    for(i = 0; input[i] != 0 && input[i] != op; ++i)
     {
-        targetBuffer[i] = buffer[i];
+        numberBuffer[i] = input[i];
     }
+    numberBuffer[i] = 0;
     return i;
 }
 
-char findOp(char* buffer)
+char findOp(char* input)
 {
     int i = 0;
-    for(i = 0; buffer[i]; ++i)
+    for(i = 0; input[i]; ++i)
     {
-        if(buffer[i] == ADD || buffer[i] == SUB)
-            return buffer[i];
+        if(input[i] == ADD || input[i] == SUB)
+            return input[i];
     }
     return '\0';
 }
