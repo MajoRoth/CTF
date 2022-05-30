@@ -17,7 +17,7 @@ char findOp(char* input);
 int main(int argc, char** argv)
 {
     char input[MAX_LENGTH] = { 0 };
-    unsigned char formulaCount = 0;
+    unsigned int formulaCount = 0;
     int (*formula)(int, int) = NULL;
     int x = 0, y = 0;
     char op = '\0';
@@ -35,7 +35,8 @@ int main(int argc, char** argv)
 
         if(strlen(input) > 0)
         {
-            update(input, &x, &y, &op);
+            update(input,
+                   &x, &y, &op);
             switch(op)
             {
                 case ADD:
