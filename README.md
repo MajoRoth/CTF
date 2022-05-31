@@ -7,7 +7,7 @@ gcc# win CTF <img src="https://github.com/MajoRoth/CTF/blob/main/static/c.svg" w
 * [the authenticator](https://github.com/MajoRoth/CTF/tree/main/the_authenticator) - RE challenge, could you log in? V
 * [go with the flow](https://github.com/MajoRoth/CTF/tree/main/go_with_the_flow) - very simple buffer overflow V
 * [get here](https://github.com/MajoRoth/CTF/tree/main/get_here) - buffer overflow, change a function call V
-* [Use after free](https://github.com/MajoRoth/CTF/tree/main/easy_uaf) - simple uaf challenge V
+* [UFO](https://github.com/MajoRoth/CTF/tree/main/ufo) - simple uaf challenge V
 
 ### Moderate
 * [lotto](https://github.com/MajoRoth/CTF/tree/main/lotto) - logic vulnerability V
@@ -17,9 +17,8 @@ gcc# win CTF <img src="https://github.com/MajoRoth/CTF/blob/main/static/c.svg" w
 * [The Kanas](https://github.com/MajoRoth/CTF/tree/main/the_kanas) - Can you beat the kanas? V
 
 ### Hard
-* [calculator](https://github.com/MajoRoth/CTF/tree/main/calculator) -
-* [calculator_aslr](https://github.com/MajoRoth/CTF/tree/main/calculator_aslr) -
-* [injector](https://github.com/MajoRoth/CTF/tree/main/injector) -
+* [calculator](https://github.com/MajoRoth/CTF/tree/main/calculator) - hard buffer overflow, change return value
+* [calculator_aslr](https://github.com/MajoRoth/CTF/tree/main/calculator_aslr) - hard buffer overflow, change return value with aslr and printf \0 vulnerability
 
 
 

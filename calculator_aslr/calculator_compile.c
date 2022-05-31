@@ -4,27 +4,36 @@
 
 #define MAX_LENGTH 32
 #define NUMBER_BUFFER_LENGTH 8
-#define XOR_KEY 0x46464646
 #define ADD '+'
 #define SUB '-'
 
-struct stack_controler{
+#pragma pack (push)
+#pragma pack (1)
+struct stack_controler
+{
     char input[MAX_LENGTH];
-    int formulaCount;
+    unsigned char formulaCount;
+    char H;
+    char I;
+    char N;
     int (*formula)(int, int);
 };
+#pragma pack (pop)
 
 void won_the_flag();
 int add(int x, int y);
 int sub(int x, int y);
-void update(char* buffer, int* x, int* y, char* op,  size_t length);
+void update(char* buffer, int* x, int* y, char* op, size_t length);
 int updateNumber(char* buffer, char* targetBuffer, const char op, size_t length);
 char findOp(char* buffer, size_t length);
 
 int main(int argc, char** argv)
 {
-    struct stack_controler stack = {0};
-    stack.formulaCount = XOR_KEY;
+    struct stack_controler stack = { 0 };
+    stack.formulaCount = 0;
+    stack.H = 'L';
+    stack.I = 'O';
+    stack.N = 'L';
     // char input[MAX_LENGTH] = { 0 };
     // int formulaCount = 0xAAAAAAAA; // We will have fun with XOR
     // int (*formula)(int, int) = NULL;
@@ -43,9 +52,8 @@ int main(int argc, char** argv)
             stack.input[strlen(stack.input) - 1] = 0;
         }
         */
-        stack.formulaCount ^= XOR_KEY;
         stack.formulaCount++;
-        stack.formulaCount ^= XOR_KEY;
+
         printf("You entered: %s\n", stack.input);
         if (strlen(stack.input) > 0)
         {
@@ -64,7 +72,7 @@ int main(int argc, char** argv)
             }
             if (stack.formula != NULL)
             {
-                printf("Your %d formula result is: %d\n", stack.formulaCount ^ XOR_KEY, stack.formula(x, y));
+                printf("Your %u formula result is: %d\n", (unsigned int)stack.formulaCount, stack.formula(x, y));
             }
             fflush(stdout);
         }
@@ -109,10 +117,11 @@ void update(char* buffer, int* x, int* y, char* op, size_t length)
 int updateNumber(char* buffer, char* targetBuffer, const char op, size_t length)
 {
     int i = 0;
-    for (i = 0;i < length && buffer[i] != 0 && buffer[i] != op; ++i)
+    for (i = 0; i < length && buffer[i] != 0 && buffer[i] != op; ++i)
     {
         targetBuffer[i] = buffer[i];
     }
+    targetBuffer[i] = 0;
     return i;
 }
 

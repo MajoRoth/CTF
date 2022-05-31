@@ -4,7 +4,6 @@
 
 #define MAX_LENGTH 32
 #define NUMBER_BUFFER_LENGTH 8
-#define XOR_KEY 0x46464646
 #define ADD '+'
 #define SUB '-'
 
@@ -18,7 +17,8 @@ char findOp(char* buffer, size_t length);
 int main(int argc, char** argv)
 {
     char input[MAX_LENGTH] = { 0 };
-    int formulaCount = XOR_KEY; // We will have fun with XOR
+    unsigned char formulaCount = 0; // We will have fun with XOR
+    unsigned char H = 'L', I = 'O', N = 'L';
     int (*formula)(int, int) = NULL;
     int x = 0, y = 0;
     char op = '\0';
@@ -29,9 +29,7 @@ int main(int argc, char** argv)
         printf("Enter your formula (empty string to exit): \n");
         fflush(stdout);
         gets(input); // ASLR is enabled, so no worries right?
-        formulaCount ^= XOR_KEY;
         formulaCount++;
-        formulaCount ^= XOR_KEY;
         printf("You entered: %s\n", input);
         if (strlen(input) > 0)
         {
@@ -50,7 +48,7 @@ int main(int argc, char** argv)
             }
             if (formula != NULL)
             {
-                printf("Your %d formula result is: %d\n", formulaCount ^ XOR_KEY, formula(x, y));
+                printf("Your %d formula result is: %d\n", formulaCount, formula(x, y));
             }
             fflush(stdout);
         }
@@ -81,24 +79,24 @@ int sub(int x, int y)
 }
 
 // I fixed this bad vulnerable code
-void update(char* buffer, int* x, int* y, char* op, size_t length)
+void update(char* input, int* x, int* y, char* op, size_t length)
 {
-    char buff[NUMBER_BUFFER_LENGTH] = { 0 };
-    *op = findOp(buffer, length);
+    char numberBuffer[NUMBER_BUFFER_LENGTH] = { 0 };
+    *op = findOp(input, length);
     if ((*op) == '\0')
         return;
-    buffer = buffer + updateNumber(buffer, buff, *op, NUMBER_BUFFER_LENGTH) + 1;
-    *x = atoi(buff);
-    updateNumber(buffer, buff, *op, NUMBER_BUFFER_LENGTH);
-    *y = atoi(buff);
+    input = input + updateNumber(input, numberBuffer, *op, NUMBER_BUFFER_LENGTH) + 1;
+    *x = atoi(numberBuffer);
+    updateNumber(input, numberBuffer, *op, NUMBER_BUFFER_LENGTH);
+    *y = atoi(numberBuffer);
 }
 
-int updateNumber(char* buffer, char* targetBuffer, const char op, size_t length)
+int updateNumber(char* input, char* numberBuffer, const char op, size_t length)
 {
     int i = 0;
-    for (i = 0;i < length && buffer[i] != 0 && buffer[i] != op; ++i)
+    for (i = 0;i < length && input[i] != 0 && input[i] != op; ++i)
     {
-        targetBuffer[i] = buffer[i];
+        numberBuffer[i] = input[i];
     }
     return i;
 }
